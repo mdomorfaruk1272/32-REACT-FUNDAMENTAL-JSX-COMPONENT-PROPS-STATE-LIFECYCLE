@@ -1,32 +1,31 @@
 import './App.css'
 
 /**
- * second bracket({}) is used to use variable on jsx html / used to make content dynamic or display dynamic data. Like: <p>{name}</p>
- * For inline style in react jsx we use an object of style with (key, value). Like: const style={color:"red"}
- * In component style attribute is dynamic for that we need to use second bracket after equal sign. Like: <p style={style}></p> 
- * @returns 
+ * The first character of Component function must be uppercase. function Person(){return <h3>hello</h3>}
+ * we need to use Component as like html tag. <Person></Person>
+ * we can return multiple html element under a parent element in jsx.
  */
 
 function App() {
-  var name = "Md. Omor Faruk";
-  var person = {
-    name: 'Dr. Mahfuz',
-    job: 'Singer',
-  }
-
-  var person2 = {
-    name: "Eva Rahman",
-    job: "kokil kondi",
-  }
-
-  var style = {
-    color: 'red',
-    backgroundColor: 'yellow',
-  }
-
   return (
-    <div style={{backgroundColor:'green'}}>
-    <h1>i am a react person {name}</h1>
+    <div>
+    <Person></Person>
+    <Person></Person>
+    <Person></Person>
+    <Person></Person>
+    </div>
+  )
+}
+
+function Person(){
+  const personStyle = {
+    border: '2px solid red',
+    margin: '10px',
+  }
+  return (
+    <div style={{border: '2px solid yellow', margin: '10px'}}>
+      <h1>Name: Sakib Al Hasan</h1>
+      <h3>Hero of the year</h3>
     </div>
   )
 }

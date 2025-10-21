@@ -1,4 +1,5 @@
 import './App.css'
+import { useState } from "react";
 
 /**
  * we can pass object array in props
@@ -33,6 +34,7 @@ function App() {
   return (
     <div>
     <p>I am a React Person</p>
+        <Counter></Counter>
     <ul>
       {
         nayoks.map(nayoks => <li>{nayoks}</li>)
@@ -55,6 +57,15 @@ function App() {
   )
 }
 
+function Counter(){
+    const [count, setState] = useState(0);
+    return (
+        <div>
+            <h1>Count: {count}</h1>
+        </div>
+    )
+}
+
 function Friend(props){
   return (
     <div style={{backgroundColor:'lightsalmon', borderRadius:'10px', margin: '10px', padding: '15px', boxShadow: '5px 5px 10px gray'}}>
@@ -75,6 +86,7 @@ function Product(props){
     display: 'block',
   }
   const {name, price} = props.product;
+
   return (
     <div style={productStyle}>
     <h3>{props.product.name}</h3>

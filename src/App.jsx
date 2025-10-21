@@ -1,31 +1,33 @@
 import './App.css'
 
 /**
- * The first character of Component function must be uppercase. function Person(){return <h3>hello</h3>}
- * we need to use Component as like html tag. <Person></Person>
- * we can return multiple html element under a parent element in jsx.
+ * pass dyanmic data in component by kay and value;
  */
 
 function App() {
+  const nayoks = ["Anwar", "Jafor", "Alomgir", "Salman"];
   return (
     <div>
-    <Person></Person>
-    <Person></Person>
-    <Person></Person>
+    <p>I am a React Person</p>
+    <Person name="Munna" job="football"></Person>
+    <Person name="Masum" job="Dorshok"></Person>
     <Person></Person>
     </div>
   )
 }
 
-function Person(){
-  const personStyle = {
-    border: '2px solid red',
-    margin: '10px',
-  }
-  return (
-    <div style={{border: '2px solid yellow', margin: '10px'}}>
-      <h1>Name: Sakib Al Hasan</h1>
-      <h3>Hero of the year</h3>
+/**
+ * props used to get dynamic data in Component. It is a object. key is the component attribute 
+ * and value is the component attribute value.
+ * @param {*} props 
+ * @returns 
+ */
+
+function Person(props){
+  return(
+    <div style={{border: '2px solid gold', width:'400px'}}>
+      <h3>My Name: {props.name}</h3>
+      <p>My Profession: {props.job}</p>
     </div>
   )
 }
